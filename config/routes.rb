@@ -5,6 +5,8 @@ Kamihira::Application.routes.draw do
   match 'contact' => 'comments#contact'
   match 'about' => 'comments#about'
   match 'rules' => 'comments#rules'
+  match 'select_thread' => 'comments#select_thread'
+  match 'show_thread' => 'comments#show_thread'
   match ':controller(/:action(/:id(.:format)))'
 
   resources :comments
