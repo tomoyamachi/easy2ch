@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @comment.name
+%p
+  %b Description:
+  = @comment.description
+%p
+  %b Img:
+  = @comment.img
+%p
+  %b Category:
+  = @comment.category
+%p
+  %b Status:
+  = @comment.status
+
+= link_to 'Edit', edit_comment_path(@comment)
+\|
+= link_to 'Back', comments_path

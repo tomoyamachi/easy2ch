@@ -1,0 +1,56 @@
+<%= render "comments/select_thread_side" -%>
+
+<div id="main">
+  <% if params[:notice] -%>
+    <p id="notice"><%= params[:notice] -%></p>
+  <% end -%>
+
+	<h2><%= @category -%></h2>
+
+  <%= form_tag(url_for(:controller => "comments", :action => "create")) do -%>
+    <p>
+      なまえ : <%= text_field_tag "name" -%>
+      画像 : <%= file_field_tag "img" -%>
+    </p>
+    <p>コメント</p>
+    <p>
+      <%= text_area_tag "description","",{:rows => "10",:cols => "100"} -%>
+    </p>
+    <%= hidden_field_tag "category", @category -%>
+    <p>
+      <%= submit_tag "送信" -%>
+    </p>
+  <% end -%>
+
+  <div class="dotline"></div>
+
+  <% @comments.each do |comment| -%>
+
+    <div class="each-comments">
+	    <h3><%= comment.name -%></h3>
+        <%= comment.created_at -%> <a href="#">[×]</a>
+      <br />
+      <%= comment.description -%>
+    </div>
+    <div class="dotline"></div>
+
+  <% end -%>
+
+
+ <p>
+  <CENTER>
+    <a href="#">前へ</a>
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#">7</a>
+    <a href="#">8</a>
+    <a href="#">9</a>
+    <a href="#">10</a>
+    <a href="#">次へ</a>
+    </CENTER>
+  </p>
+</div>
