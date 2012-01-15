@@ -17,6 +17,7 @@
       <%= text_area_tag "description","",{:rows => "10",:cols => "100"} -%>
     </p>
     <%= hidden_field_tag "category", @category -%>
+    <%= hidden_field_tag "locale", @locale -%>
     <p>
       <%= submit_tag @send_navi -%>&nbsp;&nbsp;
       <%= tag("input",:type=>"reset",:value => @reset_navi) -%>
