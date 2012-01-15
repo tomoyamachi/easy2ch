@@ -18,7 +18,8 @@
     </p>
     <%= hidden_field_tag "category", @category -%>
     <p>
-      <%= submit_tag @send_navi -%>
+      <%= submit_tag @send_navi -%>&nbsp;&nbsp;
+      <%= tag("input",:type=>"reset",:value => @reset_navi) -%>
     </p>
   <% end -%>
 

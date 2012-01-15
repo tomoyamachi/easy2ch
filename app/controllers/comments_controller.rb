@@ -11,12 +11,13 @@ class CommentsController < ApplicationController
     case locale
     when "sg"
       @country = "Singapore"
-      @select_message = "Please select a state."
+      @select_message = " "
       @side_message = "Feel free to click on a board that interests you and jump right in!"
       @name_navi = "Name"
       @image_navi = "File"
       @comment_navi = "Comment"
       @send_navi = "send"
+      @reset_navi = "reset"
     when "en"
       @country = "US"
       @select_message = "Please select a state."
@@ -25,6 +26,7 @@ class CommentsController < ApplicationController
       @image_navi = "File"
       @comment_navi = "Comment"
       @send_navi = "send"
+      @reset_navi = "reset"
     else
       @country = "Japan"
       @select_message = "都道府県を選択してください。"
@@ -33,6 +35,7 @@ class CommentsController < ApplicationController
       @image_navi = "画像"
       @comment_navi = "コメント"
       @send_navi = "送信"
+      @reset_navi = "リセット"
     end
   end
 
