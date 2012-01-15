@@ -1,13 +1,17 @@
 Kamihira::Application.routes.draw do
 
   root :to => "comments#home"
+
   match 'about' => 'comments#about'
   match 'contact' => 'comments#contact'
   match 'about' => 'comments#about'
   match 'rules' => 'comments#rules'
-  match 'select_thread' => 'comments#select_thread'
-  match 'show_thread' => 'comments#show_thread'
   match ':controller(/:action(/:id(.:format)))'
+
+  scope '(:locale)', :locale => /en|jp|sg/ do
+    match 'select' => 'comments#select_thread',:as => :select_thread
+    match 'show' => 'comments#show_thread', :as => :show_thread
+  end
 
   resources :comments
 
