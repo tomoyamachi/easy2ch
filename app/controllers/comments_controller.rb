@@ -13,14 +13,26 @@ class CommentsController < ApplicationController
       @country = "Singapore"
       @select_message = "Please select a state."
       @side_message = "Feel free to click on a board that interests you and jump right in!"
+      @name_navi = "Name"
+      @image_navi = "File"
+      @comment_navi = "Comment"
+      @send_navi = "send"
     when "en"
       @country = "US"
       @select_message = "Please select a state."
       @side_message = "Feel free to click on a board that interests you and jump right in!"
+      @name_navi = "Name"
+      @image_navi = "File"
+      @comment_navi = "Comment"
+      @send_navi = "send"
     else
       @country = "Japan"
       @select_message = "都道府県を選択してください。"
       @side_message = "興味のある板をクリックしていろんな情報を書き込もう!"
+      @name_navi = "名前"
+      @image_navi = "画像"
+      @comment_navi = "コメント"
+      @send_navi = "送信"
     end
   end
 

@@ -9,16 +9,16 @@
 
   <%= form_tag(url_for(:controller => "comments", :action => "create")) do -%>
     <p>
-      なまえ : <%= text_field_tag "name" -%>
-      画像 : <%= file_field_tag "img" -%>
+      <%= @name_navi -%> : <%= text_field_tag "name" -%>&nbsp;&nbsp;
+      <%= @image_navi-%> : <%= file_field_tag "img" -%>
     </p>
-    <p>コメント</p>
+    <p><%= @comment_navi -%></p>
     <p>
       <%= text_area_tag "description","",{:rows => "10",:cols => "100"} -%>
     </p>
     <%= hidden_field_tag "category", @category -%>
     <p>
-      <%= submit_tag "送信" -%>
+      <%= submit_tag @send_navi -%>
     </p>
   <% end -%>
 
@@ -28,7 +28,7 @@
 
     <div class="each-comments">
 	    <h3><%= comment.name -%></h3>
-        <%= comment.created_at -%> <a href="#">[×]</a>
+      <%= comment.created_at -%> <a href="#">[×]</a>
       <br />
       <%= comment.description -%>
     </div>
